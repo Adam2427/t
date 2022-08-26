@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UserName</title>
+    <script>
+
+        function doCall(name) {
+         //   var name = document.getElementById("id1").value;
+            var res = document.getElementById("res");
+            var usr = usernames.indexOf(name);
+
+            if (usr >= 0) {
+                Results = "This Username Is Already Taken";
+                res.innerHTML = Results;
+                res.style.color = "red";
+            }
+            else {
+                Results = "Congrates..! This Name Is Avaliable For You"
+                res.innerHTML = Results;
+                res.style.color = 'Blue';
+            }
+        }
+    </script>
+
+</head>
+
+<body align="center" style="background-color: rgba(77, 148, 255, 0.787); font-size: 25px; font-weight: bold; ">
+    <br><br><br><br>
+    <h1> UserName Checker Availablity</h1><br>
+    <span id="spn" style="color: #fb4f4f;"> </span> <br><br> <br>
+    UserName: <input type="text" id="id1" onblur="doCall(this.value)"
+        style="font-weight: bold; font-size: 20px;"><br><br><br><br>
+    <span id="res"></span>
+</body>
+<script>
+    var usernames = ["rajini", "kamal", "vijay", "ajith", "suriya", "vikram"];
+    document.getElementById("spn").innerHTML = usernames;
+</script>
+
+</html>

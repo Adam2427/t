@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>string&Num</title>
+    <script>
+        var arr = ["hi", 89, "hello", "Good", 100, "Morning", 67];
+        
+        function doCheck() {
+            var results = document.getElementById("res");
+            var strarr = [];
+            var numarr = [];
+            var numbers = arr.filter(doCall);
+
+            function doCall(value) {
+                if (typeof (value) === 'number') {
+                    return numarr.push(value);
+                }
+                else {
+                    return strarr.push(value);
+                }
+            }
+            results.innerHTML = "String  =" + strarr + "<br>" + "Number  =" + numarr;
+        }
+    </script>
+</head>
+
+<body style="font-size: 20px;">
+    <h1>Separate numbers and strings in a separate Array</h1>
+    <span id="arr"></span><br><br>
+    <button onclick="doCheck()">String&Number</button><br><br>
+    <div id="res"> </div>
+</body>
+<script>
+
+    document.getElementById("arr").innerHTML = arr;
+</script>
+
+</html>

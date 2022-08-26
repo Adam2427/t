@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <script>
+   function doCalc(op)
+   {
+
+          var Num1=document.getElementById("id1").value;
+          var Num2=document.getElementById("id2").value;
+          var Results;
+          var Res = document.getElementById("results2");
+          if (!isNaN(Num1)&&!isNaN(Num1))
+       {   if (op=='add') 
+           {
+             Results=Number(Num1)+Number(Num2);
+             Res.style.color="blue";
+            
+           }
+           else if (op=="sub")
+            {
+             Results=Num1-Num2;
+             Res.style.color="orange";
+             Res.style.fontSize="25px";
+           } 
+           else if (op=="mult")
+            {
+             Results=Num1*Num2;
+             Res.style.color="yellow";
+           } 
+           else if (op=="div")
+            {
+             Results=Num1/Num2;
+             Res.style.color="blue";
+           } 
+          Results = doSquare(Results);
+       }
+       
+           else {
+            Results="please Enter Valid Inputs"; 
+            Res.style.color="Red"
+          }
+        
+  
+          Res.innerHTML=Results;
+          function doSquare(res)
+         {
+        
+         return  res*res
+
+         }
+        }
+    </script>
+</head>
+<body>
+  <form>
+    number1: <input type="text"  id="id1"> <br><br>
+    number2: <input type="number"  id="id2"> <br><br>
+
+    <input type="button" value="Add" onclick="doCalc('add')">&nbsp;
+    <input type="button" value="Sub" onclick="doCalc('sub')">&nbsp;
+    <input type="button" value="Mult" onclick="doCalc('mult')">&nbsp;
+    <input type="button" value="Div" onclick="doCalc('div')"> <br><br>
+<!--
+
+  Results: <input type="text" id="results"> <br><br> -->
+   Results: <span id="results2" >hello</span>
+  
+  </form>
+</body>
+</html>

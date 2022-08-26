@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>JavaScript Fundamentals – Part 1</title>
+  <style>
+    body {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(to top left, #28b487, #7dd56f);
+    }
+
+    h1 {
+      font-family: sans-serif;
+      font-size: 50px;
+      line-height: 1.3;
+      width: 100%;
+      padding: 30px;
+      text-align: center;
+      color: white;
+    }
+  </style>
+  <script>
+    const massMark = 78;
+    const massJohn = 92;
+    const markHeight = 1.69;
+    const johnHeight = 1.95;
+    let markHigherBMI = massMark / markHeight ** 2;
+    //  console.log(markHigherBMI);
+    let johnHigherBMI = massJohn / johnHeight ** 2;
+    // console.log(markHigherBMI > johnHigherBMI);
+    // const firstname = "Jonas";
+    // const job = "Teacher";
+    // const birthYear = 1991;
+    // const year = 2037;
+    // const Jonas = "I'm" + ", a " + firstname + " " + (year - birthYear) + " Year Old " + job + "!";
+    // console.log(Jonas);
+    // const jonasNew = `I'm, a ${firstname} ${year - birthYear} Year Old ${job}! `;
+    // console.log(jonasNew);
+    // const kk = `HI How are you Am  a Dinesh kumar`
+    // console.log(`
+    //   HI How
+    //   are you Am
+    //   a Dinesh kumar`);
+    // let results;
+    // if (markHigherBMI > johnHigherBMI) {
+    //   results = ` mark (${markHigherBMI}) is Higher than john (${johnHigherBMI})`
+    // } else {
+    //   results = "john is Higher than Mark"
+    // }
+    // console.log(results);
+    // const favNumber = prompt("What is your favourite Number");
+    // console.log(favNumber);
+    // const dolphinsScore = (97 + 112 + 101) / 3;
+    // const koalasScore = (109 + 95 + 106) / 3;
+    // console.log(dolphinsScore, koalasScore);
+    // if (dolphinsScore > koalasScore) {
+    //   console.log("Dolphins win the trophy");
+    // } else if (dolphinsScore < koalasScore) {
+    //   console.log("Koalas win the trophy ");
+
+    // }
+    // else if (dolphinsScore == koalasScore) {
+    //   console.log("Both win the trophy ");
+
+    // }
+    // var age = 23;
+    // var res = age >= 18 ? " pass" : "Fail";
+    // console.log(res);
+    // console.log(`I like ${ res = age >= 18 ? " pass" : "Fail"}`);
+
+    // const stevenBill = 403;
+    // const stevenTip = stevenBill >= 50 && stevenBill <= 300 ? stevenBill * 0.15 : stevenBill * 0.2;
+
+
+    // //const stevenFinalBill = stevenBill + stevenTip;
+    // console.log(`     The Bill is = ${stevenBill} ,
+    //  The Tip is = ${stevenTip},
+    //  The Final value is = ${stevenBill + stevenTip} `);
+
+    // function appleAndOrange(apple, orange) {
+    //   console.log(apple, orange);
+    //   var results = `I have ${apple} apples and ${orange} Orange is Availble `;
+    //   return results;
+    // }
+
+    // console.log(appleAndOrange(2, 5));
+    //const num = Number("23");
+    // function agePerson(birthYear) {
+    //   return 2000 - birthYear;
+    // }
+    // const age = agePerson(1991);
+    // const age1 = function (birthYear) {
+    //   return 2050 - birthYear;
+    // }
+    // const age2 = age1(2000);
+    // console.log(age, age2);
+    // const calAge = birthYear => 2050 - birthYear;
+    // const age3 = calAge(2000);
+    // console.log(age3);
+    // const name = username => `HI am a ${username} :)`;
+    // const uname = name("dinesh kumar");
+    // console.log(uname);
+
+    //   const retireUntillAge = (birthYear, firstname) => {
+    //     var age = 2055 - birthYear;
+    //     var retireAge = 65 - age;
+    //     return `To retirer a age of ${retireAge} and the name is ${firstname} `;
+    //   }
+    //   console.log(retireUntillAge(2000, "Adam"));
+    //   console.log(retireUntillAge(2030, "Dinesh"));
+
+    // const fruitCutPieces = fruit => fruit * 4;
+    // const fruitProcess = (apple, orange) => {
+    //   var pieceOfApple = fruitCutPieces(apple);
+    //   var pieceOfOrange = fruitCutPieces(orange);
+    //   const juice = `I have a ${pieceOfApple} piece of Apple and ${pieceOfOrange} piece of orange `;
+    //   return juice;
+    // }
+    // console.log(fruitProcess(5, 10));
+    // const calAverage = (a, b, c) => (a + b + c) / 3;
+    // let dolphinsScore = calAverage(44, 23, 71);
+    // let koalasScore = calAverage(65, 54, 49);
+    // console.log(dolphinsScore, koalasScore);
+    // const winner = function (avgDolphins, avgKoalas) {
+    //   if (avgDolphins >= avgKoalas * 2) {
+    //     console.log(`average of dolphins( ${avgDolphins}) is win the Trophy( ${avgKoalas}) :)`);
+    //   }
+    //   else if (avgKoalas >= avgDolphins * 2) {
+    //     console.log(`average of Koalas (${avgKoalas}) is win the Trophy (${avgDolphins} ): )`);
+    //   }
+    //   else {
+    //     console.log("No Teams is Win....");
+    //   }
+    // }
+    // dolphinsScore = calAverage(85, 41, 54);
+    // koalasScore = calAverage(23, 27, 31);
+    // winner(dolphinsScore, koalasScore);
+    // winner(111, 576);
+    //exercise 41
+    // const calTip = bill => bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.20;
+
+    // const bills = [125, 555, 44];
+    // const Tips = [calTip(bills[0]), calTip(bills[1]), calTip(bills[2])];
+    // // console.log(Tips);
+    // const total = [bills[0] + Tips[0], bills[1] + Tips[1], bills[2] + Tips[2]];
+    // var results = bills.map(function (val, ind) {
+    //   return val + Tips[ind];
+    // })
+    // console.log(bills, Tips, results);
+    // console.log(bills, Tips, total);
+    //console.log(results);
+    // var names = {
+    //   firstnames: "Adam", lastnames: "Kumar", job: "teacher", license: false, birthYear: 1991, calAge: function () {
+    //     // this.ages = this.age + 10;
+
+    //     return this.age = 2037 - this.birthYear;
+
+    //   },
+    //   getSummary: function () {
+    //     return `Am ${this.firstnames} and also am working ${this.job} then my returing age to ${this.calAge()} then ${this.license ? "a" : "No"} retirement  `;
+    //   }
+    // };
+    // var uname = "names";
+    // console.log(names['first' + uname]);
+    // console.log(names['lastnames']);
+
+    // console.log(names['age']);
+    //  console.log(names.age);
+    //  console.log(names.calAge());
+    // console.log(names);
+    // console.log(names.getSummary());
+
+
+    ///////////////////////////////////
+
+    // exercise 45
+    // const mark = {
+    //   fullname: "Mark Miller", height: 1.69, mass: 78, calBMI: function () {
+    //     return this.bmi = this.mass / this.height ** 2;
+    //   }
+    // };
+    // const john = {
+    //   fullname: "John Smith", height: 1.955, mass: 92, calBMI: function () {
+    //     return this.bmi = this.mass / this.height ** 2;
+    //   }
+    // };
+    // console.log(mark.calBMI());
+    // console.log(john.calBMI());
+    // const finalBMI = mark.calBMI() > john.calBMI() ? "Marks is wins" : "Jhon is wins ";
+    // console.log(finalBMI);
+
+
+    // let dice = Math.trunc(Math.random() * 6 + 1);
+    // //console.log(dice);
+    // while (dice !== 6) {
+    //   console.log(`you rolled a ${dice}`);
+    //   dice = Math.trunc(Math.random() * 6 + 1);
+    //   if (dice === 6) {
+    //     console.log("loop Are End.");
+    //   }
+    // }
+
+    /////////////////////////////////////////////////
+    // exercise 50
+    let bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52]
+    let tips = [];
+    let total = [];
+    const calTip = bill => bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.20;
+    for (let i = 0; i < bills.length; i++) {
+      tips.push(calTip(bills[i]));
+      total.push(bills[i] + tips[i]);
+    }
+    console.log(bills);
+    console.log(tips);
+    console.log(total);
+    const calAverage = function (arr) {
+      let sum = 0;
+      for (let i = 0; i < arr.length; i++) {
+        //  const element = arr[i];
+        sum += arr[i];
+      }
+
+      return sum / arr.length;
+    }
+    console.log(calAverage([2, 3, 7]));
+    console.log(calAverage(total));
+    console.log(calAverage(tips));
+  </script>
+
+</head>
+
+<body>
+  <h1>JavaScript Fundamentals – Part 1</h1>
+</body>
+
+</html>

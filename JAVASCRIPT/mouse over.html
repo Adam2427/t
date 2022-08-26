@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en"  oncontextmenu="return doCall()">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mouseover</title>
+    <script>
+        function showText(op){
+            if (op=='a') {
+                var text=document.getElementById("id1").src;
+            document.getElementById("image").src=text;
+            }
+          else  if (op=='b') {
+                var text=document.getElementById("id2").src;
+            document.getElementById("image").src=text;
+            }
+            else  if (op=='c') {
+                var text=document.getElementById("id3").src;
+            document.getElementById("image").src=text;
+            }
+            else  if (op=='d') {
+                var text=document.getElementById("id4").src;
+            document.getElementById("image").src=text;
+            }
+            else  if (op=='e') {
+                var text=document.getElementById("id5").src;
+            document.getElementById("image").src=text;
+            }
+            else{
+                var text=document.getElementById("id").src;
+            document.getElementById("image").src=text;
+            }
+           
+        }
+    
+        function hide(){
+            document.getElementById("text").innerHTML="iphone12";
+        }
+        function howText() {
+            alert("Sold Out");
+        }
+        </script>
+     
+       
+</head>
+<body>
+    
+    <img  src="1.jpeg" id="image" onMouseOver="howText()" onMouseOut="hide()">
+    <div id="text">
+      
+    </div>
+    <img src="1.jpeg" style="height: 50px; width: 50px ;"  id="id" onMouseOver="showText()" >&nbsp;
+    <img src="2.jpeg" style="height: 50px; width: 50px ;"  id="id1" onMouseOver="showText('a')" >&nbsp;
+    <img src="3.jpeg" style="height: 50px; width: 50px ;"  id="id2" onMouseOver="showText('b')" >&nbsp;
+    <img src="4.jpeg" style="height: 50px; width: 50px ;"  id="id3" onMouseOver="showText('c')" >&nbsp;
+    <img src="5.jpeg" style="height: 50px; width: 50px ;"  id="id4" onMouseOver="showText('d')" >&nbsp;
+    <img src="6.jpeg" style="height: 50px; width: 50px ;"  id="id5" onMouseOver="showText('e')" >
+</body>
+    
+</body>
+</html>

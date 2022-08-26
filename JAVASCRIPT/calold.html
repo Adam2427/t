@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <script>
+
+        function doAdd() {
+            var number1 = document.getElementById("id1").value;
+            var number2 = document.getElementById("id2").value;
+            var Results = Number(number1) + Number(number2);
+            document.getElementById("results").value = Results;
+            document.getElementById("results1").innerHTML = Results;
+
+        }
+        function doSub() {
+            var number1 = document.getElementById("id1").value;
+            var number2 = document.getElementById("id2").value;
+            var Results = Number(number1) - Number(number2);
+            document.getElementById("results").value = Results;
+            document.getElementById("results1").innerHTML = Results;
+
+        }
+        function doMultiply() {
+            var number1 = document.getElementById("id1").value;
+            var number2 = document.getElementById("id2").value;
+            var Results = Number(number1) * Number(number2);
+            document.getElementById("results").value = Results;
+            document.getElementById("results1").innerHTML = Results;
+
+        }
+        function doDivide() {
+            var number1 = document.getElementById("id1").value;
+            var number2 = document.getElementById("id2").value;
+            var Results = Number(number1) / Number(number2);
+            document.getElementById("results").value = Results;
+            document.getElementById("results1").innerHTML = Results;
+
+        }
+        function doPercent() {
+            var number1 = document.getElementById("id1").value;
+            var number2 = document.getElementById("id2").value;
+            var Results = Number(number1) / Number(number2) * 100 + "%";
+
+            document.getElementById("results").value = Results;
+            document.getElementById("results1").innerHTML = Results;
+
+        }
+
+    </script>
+
+
+</head>
+
+<body align="center" style="font-size: 30px;font-weight: bold;background-color: cornflowerblue; ">
+    <br><br><br><br>
+    <form>
+        Number1: <input type="text" id="id1" autofocus><br><br>
+        Number2: <input type="text" id="id2"><br><br>
+
+
+        <input type="button" value="Add" onclick="doAdd()"
+            style="font-size: 20px; background-color: rgb(255, 70, 107);">&nbsp;
+        <input type="button" value="Sub" onclick="doSub()"
+            style="font-size: 20px;background-color: rgb(255, 92, 124);">&nbsp;
+        <input type="button" value="Multiply" onclick="doMultiply()"
+            style="font-size: 20px;background-color: rgb(248, 97, 127);">&nbsp;
+        <input type="button" value="Divide" onclick="doDivide()"
+            style="font-size: 20px;background-color: rgb(251, 75, 111);">&nbsp;
+        <input type="button" value="percentage" onclick="doPercent()"
+            style="font-size: 20px;background-color: rgb(255, 97, 129);"><br><br>
+
+
+        Results: <input type="text" id="results"><br><br>
+        Results: <span id="results1">User Results</span><br><br>
+
+    </form>
+</body>
+
+</html>

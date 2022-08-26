@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>dinesh kumar</title>
+  <script>
+    // 1) string startswith
+
+    var str2 = "javaScript";
+    if (str2.startsWith("java")) {
+      console.log("true");
+    }
+
+
+
+    //6. first letter capital
+
+    var str4 = "Write a JavaScript program to capitalize the first letter of each word of a given string."
+    function capLetter(str) {
+      str = str.split(" ");
+
+      for (var i = 0; i < str.length; i++) {
+        str[i] = str[i][0].toUpperCase() + str[i].substr(1);
+      }
+
+      return str.join(" ");
+    }
+
+    console.log(capLetter(str4));
+
+    //9. Write a JavaScript function to filter
+
+    var temparr = [];
+    var Arr = [58, '', 'abcd', true, null, false, 0];
+    var Res = Arr.filter(doCall)
+    function doCall(value) {
+      if (value) {
+        temparr.push(value)
+      }
+    }
+    console.log(temparr);
+
+    // 10)function get random method
+
+    function random_item(items) {
+
+      return items[Math.round(Math.random() * items.length)];
+
+    }
+    var items = [254, 45, 212, 365, 2543];
+
+    console.log(random_item(items));
+
+    //11) string alphabetical order
+    var str1 = "exercise";
+    var arr = str1.split("");
+    var res1 = arr.sort().join("");
+    console.log(res1);
+
+    // 12. string largest word
+    var str = 'Web Development Tutorial';
+    var result = str.split(" ");
+    var res = result.sort(function (a, b) {
+      return b.length - a.length;
+    }
+    )
+    console.log(res[0]);
+
+    // 14) object name,class,rollno
+    var student = {
+      name: "David Rayy",
+      sclass: "VI",
+      rollno: 12
+
+    };
+    student.fullname = function () {
+      return this.name + "," + this.sclass + "," + this.rollno;
+    }
+
+    console.log(student.fullname());
+
+    // 15) object length
+    var len = Object.keys(student).length;
+    console.log(len);
+  </script>
+</head>
+
+<body>
+
+</body>
+<script>
+
+</script>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loop userName</title>
+    <script>
+        var usernames = ["Rajini", "kamal", "vijay", "ajith", "suriya", "vikram"];
+        var results;
+
+        function doLoop() {
+            var name = document.getElementById("id1").value;
+
+            for (var i = 0; i < usernames.length; i++) {
+
+                if (usernames[i].toLowerCase().includes(name.toLowerCase())) {
+
+                    results = "USERNAME IS ALREADY TAKEN";
+                    break;
+                }
+                else {
+                    results = "CONGRATS USERNAME AVAILABLE";
+                }
+            } 
+            document.getElementById("res1").innerHTML = results;
+        }
+
+        function doNoLoop() {
+            var name = document.getElementById("id2").value;
+            var str = usernames.toString();
+
+            if (str.toLowerCase().includes(name.toLowerCase())) {
+                results = "USERNAME IS ALREADY TAKEN";
+            }
+            else {
+                results = "CONGRATS USERNAME AVAILABLE";
+            }
+            document.getElementById("res2").innerHTML = results;
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Username check Availability with case insensitive. With for and without for loop</h1>
+    <span id="spn"></span><br>
+    <h4> With For Loop</h4>
+    Username: <input type="text" id="id1">
+    <button onclick="doLoop()">Click</button> <br><br>
+    <div id="res1"></div>
+    <hr>
+
+    <h4> WithOut For Loop</h4>
+    Username: <input type="text" id="id2">
+    <button onclick="doNoLoop()">Click</button><br><br>
+    <div id="res2"></div>
+</body>
+<script>
+
+    document.getElementById("spn").innerHTML = usernames;
+
+</script>
+
+</html>

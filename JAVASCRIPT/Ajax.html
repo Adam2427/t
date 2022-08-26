@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax Movie</title>
+    <script>
+        function getMovieInfo(mname) {
+            var xhttp = new XMLHttpRequest;
+            xhttp.onreadystatechange = function () {
+                // alert(xhttp.readyState);
+                if (xhttp.readyState < 4) {
+                    document.getElementById("loader").style.display = "block";
+                    document.getElementById("mdata").style.display = "none";
+                }
+                else if (xhttp.readyState == 4 && xhttp.status == 200) {
+                    console.log(xhttp.responseText);
+                    var responseData = JSON.parse(xhttp.responseText)
+
+                    document.getElementById("mdata").style.display = "block";
+                    document.getElementById("img").src = responseData.Poster;
+                    document.getElementById("loader").style.display = "none";
+                }
+
+            }
+
+            xhttp.open("GET", "https://www.omdbapi.com/?t=" + mname + "&apikey=c429066e");
+            xhttp.send();
+        }
+    </script>
+</head>
+
+<body>
+    Movie Name: <input type="text" onblur="getMovieInfo(this.value)"><br><br>
+    <div id="loader" style="display: none;">
+        <img src="loader.gif" alt="">
+    </div>
+    <div id="mdata" style="display: none;">
+        <h2> Movie info</h2>
+        <img src=" " id="img">
+    </div>
+</body>
+
+</html>

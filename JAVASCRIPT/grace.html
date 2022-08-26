@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grace</title>
+    <script>
+        var marks = [34, 45, 56, 34, 23, 11, 66, 77, 88, 99];
+
+        function doGrace() {
+            var num = document.getElementById("num").value;
+            var results = marks.map(doAdd);
+
+            function doAdd(value) {
+                var mark = value + Number(num);
+                if (mark > 100) {
+                    return mark = 100;
+                }
+                else {
+                    return mark;
+                }
+            }
+            document.getElementById("res").innerHTML = results;
+        }
+    </script>
+</head>
+
+<body style="font-size: 20px;">
+    <h1>Add Grace marks</h1>
+    <span id="res"></span><br><br>
+    Grace Marks: <input type="text" id="num">
+    <button onclick="doGrace()">Update</button>
+</body>
+<script>
+
+    document.getElementById("res").innerHTML = marks;
+</script>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>includes</title>
+  <script>
+
+
+
+
+
+    function doCall(uname) {
+     // var uname = document.getElementById("id1").value;
+      var name = usernames.includes(uname);
+      var res=document.getElementById("res");
+      if (name) {
+        Results = "Name is Already Taken";
+
+        res.innerHTML = Results;
+        res.style.color = "red";
+      }
+       else {
+        Results = "Name is Available";
+        res.innerHTML = Results;
+        res.style.color = "blue";
+      }
+
+
+    }
+  </script>
+</head>
+
+<body style="font-size: 20px;">
+  <h1>Username Checker With includes</h1>
+  usernames:
+  <span id="sr"></span><br><br>
+  UserName: <input type="text" id="id1" onblur="doCall(this.value)"><br><br>
+  <span id="res">Results</span>
+
+</body>
+<script>
+  var usernames = "vijay Ajith vikram Suriya";
+  document.getElementById("sr").innerHTML = usernames;
+</script>
+
+</html>

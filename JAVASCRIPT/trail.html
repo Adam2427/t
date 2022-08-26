@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    // setInterval(doStart,1000)
+    var st;
+    function doStart() {
+        doAdd();
+        st = setInterval(doAdd, 1000);
+    }
+    function doAdd() {
+        var date = new Date().toLocaleTimeString();
+        document.getElementById("time").innerHTML = date;
+    }
+
+    function doStop() {
+        clearInterval(st);
+    }
+</script>
+
+<body>
+    <div id="time"></div><br>
+    <button onclick="doStart()"> Start</button>&nbsp;
+    <button onclick="doStop()"> Stop</button>
+</body>
+
+</html>

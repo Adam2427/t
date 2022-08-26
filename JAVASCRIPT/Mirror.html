@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mirror</title>
+    <script>
+        function doMirror() {
+            var str = document.getElementById("id1").value;
+
+            var results = str.split("").reverse().join('');
+
+            document.getElementById("res").innerHTML = results;
+        }
+
+    </script>
+</head>
+
+<body>
+    <h1>Call A Function Mirror()</h1>
+    Mirror: <input type="text" id="id1">
+    <button onclick="doMirror()">Mirror</button><br><br>
+    <div id="res"></div>
+</body>
+
+</html>

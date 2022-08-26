@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>replace</title>
+
+  <script>
+    var str = "hi Gopi, how are you gopi? hello gopi what happened gopi?"
+
+
+    function doRep() {
+      var find = document.getElementById("id1").value;
+      var Replace = document.getElementById("id2").value;
+      var caseInSentive = document.getElementById("id3");
+      var globalMatch = document.getElementById("id4");
+
+      var res = document.getElementById("res");
+
+      if (caseInSentive.checked && globalMatch.checked) {
+        var Results = str.replace(new RegExp(find, "ig"), Replace);
+        res.innerHTML = Results;
+      }
+      else if (caseInSentive.checked) {
+
+        var Results = str.replace(new RegExp(find, "i"), Replace);
+        res.innerHTML = Results;
+      }
+      else if (globalMatch.checked) {
+        var Results = str.replace(new RegExp(find, "g"), Replace);
+        res.innerHTML = Results;
+      }
+
+      else {
+        var Results = str.replace(find, Replace);
+        res.innerHTML = Results;
+      }
+    }
+
+
+
+
+
+  </script>
+</head>
+
+<body align="center" style="font-size: 20px;">
+  <form>
+    <h1>Find The Replace</h1><br>
+    <span>hi Gopi, how are you gopi? hello gopi what happened gopi?</span><br><br>
+    Find: <input type="text" name="" id="id1"><br><br>
+    Replace: <input type="text" name="" id="id2"><br><br>
+    <input type="checkbox" id="id3">Case InSentive<br><br>
+    <input type="checkbox" id="id4">Global Match<br><br>
+
+    <input type="button" value="Replace" onclick="doRep()"><br><br>
+
+    <span id="res"></span>
+  </form>
+</body>
+
+</html>

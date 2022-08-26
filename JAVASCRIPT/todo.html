@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todolist</title>
+    <script>
+
+        var menus = ["Arun", "Bala", "Charan", "Gopi", "kumar"];
+
+        function doCall(op) {
+
+            var results = "<ul>";
+            var name = document.getElementById("id1").value;
+            switch (op) {
+                case 'push':
+                    menus.push(name);
+                    break;
+                case 'pop':
+                    menus.pop();
+                    break;
+                case 'unshift':
+                    menus.unshift(name);
+                    break;
+                case 'shift':
+                    menus.shift();
+                    break;
+
+            }
+            for (var i = 0; i < menus.length; i++) {
+                results += "<li>" + menus[i] + "&nbsp;&nbsp;  <button onclick='doEdit(" + i + ")'>Edit</button><button onclick='doDel(" + i + ")'>Delete</button>" + "</li>";
+            }
+            results += "</ul>";
+            document.getElementById("list").innerHTML = results;
+
+        }
+
+        function doEdit(index) {
+            var data = index;
+            window.data = data;
+            document.getElementById("edit").style.display = "block";
+            document.getElementById("upload").value = menus[index];
+            // alert(ind);
+            doUpload(data);
+        }
+        function doDel(index) {
+            menus.splice(index, 1);
+            doCall();
+        }
+        function doUpload(op) {
+            // var index=data;
+            var upl = document.getElementById("upload").value;
+            // alert(index);
+            menus.splice(data, 1, upl);
+            switch (op) {
+                case 'click':
+                document.getElementById("edit").style.display = "none"; 
+                    break;
+            
+              
+            }
+           // 
+            doCall();
+
+        }   
+    </script>
+</head>
+
+<body onload="doCall()">
+    <h1>To Do List</h1>
+    Menus: <input type="text" id="id1"><br><br>
+    <input type="button" value="push" onclick="doCall('push')">&nbsp;
+    <input type="button" value="Pop" onclick="doCall('pop')">&nbsp;
+    <input type="button" value="UnShift" onclick="doCall('unshift')">&nbsp;
+    <input type="button" value="Shift" onclick="doCall('shift')">&nbsp;
+
+    <div id="list"></div>
+    <div id="edit" style="display: none;">
+        <h2>Edit the Menus</h2>
+        Edit: <input type="text" id="upload">
+        <button onclick="doUpload('click')">Upload</button>
+    </div>
+</body>
+<script>
+
+</script>
+
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" onload="doHide()">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todolist</title>
+    <script>
+
+        var menus = ["HTML5", "CSS ", "JS  ", "JQUERY", "AJAX", "ANGULAR"];
+        var Result;
+
+        function doCall(op) {
+            var name = document.getElementById("id1").value;
+
+            switch (op) {
+                case 'push':
+                    menus.push(name);
+
+                    break;
+                case 'pop':
+                    menus.pop();
+                    break;
+                case 'unshift':
+                    menus.unshift(name);
+                    break;
+                case 'shift':
+                    menus.shift();
+                    break;
+
+            }
+            listDisplay(menus);
+        }
+
+        function listDisplay(arr) {
+
+            var results = "<ul>";
+            for (var i = 0; i < arr.length; i++) {
+                results += "<li><input type='checkbox' >" + arr[i] + "&nbsp;&nbsp;  <button onclick='doEdit(" + i + ")'>Edit</button><button onclick='doDel(" + i + ")'>Delete</button>" + "</li>";
+
+            }
+
+            results += "</ul>";
+            list.innerHTML = results;
+
+        }
+        function doEdit(index) {
+
+            window.data = index;
+            edit.style.display = "block";
+            update.value = menus[index];
+        }
+
+        function doDel(index) {
+            menus.splice(index, 1);
+            listDisplay(menus);
+        }
+        
+        function doUpdate(op) {
+            var upl = update.value;
+            menus.splice(data, 1, upl);
+            if (op == 'click') {
+                edit.style.display = "none";
+                listDisplay(menus);
+            }
+        }
+        function doSearch(searchtxt) {
+            var tempArry = [];
+
+            for (var i = 0; i < menus.length; i++) {
+                if (menus[i].toLowerCase().includes(searchtxt.toLowerCase())) {
+                    tempArry.push(menus[i]);
+                }
+            }
+            if (tempArry.length) {
+                Result = " YOU HAVE FOUND   " + tempArry.length + "   RECORDS";
+            }
+            else {
+                Result = "NO RECORD FOUND";
+            }
+            res.innerHTML = Result;
+            listDisplay(tempArry);
+        }
+
+    </script>
+</head>
+
+<body onload="listDisplay(menus)"
+    style="font-size: 25px; font-weight: bold; text-align: center; background-color: hsl(209, 100%, 71%);">
+    <h1>To Do List</h1>
+    Menus: <input type="text" id="id1"><br><br>
+    <input type="button" value="push" onclick="doCall('push')">&nbsp;
+    <input type="button" value="Pop" onclick="doCall('pop')">&nbsp;
+    <input type="button" value="UnShift" onclick="doCall('unshift')">&nbsp;
+    <input type="button" value="Shift" onclick="doCall('shift')"><br><br>
+    <div> Search: <input type="search" onkeyup="doSearch(this.value)"></div><br>
+    <div id='res'> </div>
+    <div id="list"></div>
+    <div id="edit" style="display: none;">
+        <h2>Edit the Menus</h2>
+        Edit: <input type="text" id="update">
+        <button onclick="doUpdate('click')">Update</button>
+    </div>
+</body>
+<script>
+    var edit = document.getElementById("edit");
+    var update = document.getElementById("update");
+    var list = document.getElementById("list");
+    var res = document.getElementById("res");
+</script>
+
+</html>

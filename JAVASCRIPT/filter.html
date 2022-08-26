@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>filter mark</title>
+    <script>
+        var marks = [34, 45, 56, 34, 23, 11, 66, 77, 88, 99];
+        
+        function doFilter() {
+            var ckbox = document.getElementById("check");
+            var results = marks.filter(function (mark) {
+                if (ckbox.checked) {
+                    return mark >= 60;
+                }
+                else {
+                    return mark;
+                }
+            });
+            document.getElementById("id1").innerHTML = results;
+        }
+
+
+    </script>
+</head>
+
+<body>
+    <h1>7. Filter only passed subjects</h1>
+    <span id="id1"></span> <br><br>
+
+    Show Passes Marks Only: <input type="checkbox" name="" id="check" onclick="doFilter()">
+
+</body>
+<script>
+
+    document.getElementById("id1").innerHTML = marks;
+
+
+</script>
+
+</html>

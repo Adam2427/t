@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slice</title>
+    <script>
+    var str= "hi gopi, how are you Gopi?"
+    function doSlice()
+     {
+         var num1=document.getElementById("id1").value;
+         var num2=document.getElementById("id2").value;
+        
+         var Results= str.slice(num1,Number(num2)+1);
+        document.getElementById("res").innerHTML=Results;
+    }
+    </script>
+</head>
+<body style="font-size: 20px;">
+    <h1>Slice The Data</h1><br>
+  <span>hi gopi, how are you Gopi?</span><br><br>
+    Start: <input type="number" name="" id="id1"><br><br>
+    End: <input type="number" name="" id="id2"><br><br>
+   <input type="button" value="Slice" onclick="doSlice()"><br><br>
+    <span id="res"></span>
+</body>
+</html>

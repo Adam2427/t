@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>large&Small</title>
+    <script>
+        var arr = ["Hi", "GOOD", "MORNING", "HELLO", "HOW", "ARE", "YOU?"];
+        
+        function doFind(op) {
+            var Results = arr.sort(function (a, b) {
+                if (op == 'large') {
+                    return b.length - a.length;
+                } else {
+                    return a.length - b.length;
+                }
+
+            });
+            document.getElementById("res").innerHTML = Results[0];
+        }
+
+
+    </script>
+</head>
+
+<body style="font-size: 20px;">
+    <h1>Find longest word from the Array</h1>
+    <span id="arr"></span><br><br>
+    <button onclick="doFind('large')">Find longest Word</button> &nbsp;&nbsp;
+    <button onclick="doFind('small')">Find Smallest Word</button><br><br>
+    <div id="res"> YOUR RESULTS</div>
+</body>
+<script>
+
+    document.getElementById("arr").innerHTML = arr;
+</script>
+
+</html>

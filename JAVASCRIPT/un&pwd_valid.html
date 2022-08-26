@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>un&pwd_valid</title>
+    <script>
+       alert(sessionStorage.getItem("username")); 
+       window.addEventListener("DOMContentLoaded",function(){
+           document.getElementById("btn").addEventListener("click",doCall)
+       })
+      function doCall() {
+          var uname = document.getElementById("id1").value;
+          var pswd = document.getElementById("id2").value;
+       if (uname=="admin" && pswd=="admin") {
+           window.location.href="welcome.html"
+       } else {
+          document.getElementById("res").innerHTML="INVALID LOGIN";
+       }
+      }
+
+
+
+
+
+    </script>
+</head>
+
+<body>
+    <div id="res"></div>
+    username: <input type="text" id="id1"><br><br>
+    password: <input type="password" id="id2"><br><br>
+    <button id="btn" >click</button><br><br>
+   
+   
+
+</body>
+
+
+</html>

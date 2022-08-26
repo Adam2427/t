@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coupon</title>
+  <script>
+
+    function doCall() {
+      var code = document.getElementById("id1").value;
+      //code = code.toUpperCase();
+      document.getElementById("id1").value = code.toUpperCase();
+    }
+    function doTrim() {
+      var val = document.getElementById("id2").value;
+      //val = val.trim();
+      document.getElementById("id2").value =  val.trim();
+
+    }
+
+  </script>
+</head>
+
+<body>
+  <h1>Enter The Coupon Code</h1>
+  CouponCode: <input type="text" id="id1" onblur="doCall()"><br><br>
+  <hr>
+
+  <h1>Trim The Values</h1>
+  Enter The Value: <input type="text" id="id2" onblur="doTrim()"><br><br>
+  <hr>
+
+</body>
+
+</html>

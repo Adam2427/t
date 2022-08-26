@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zoom</title>
+    <script>
+
+        function doIn() {
+            var img = document.getElementById("id1");
+            var eheight = img.clientHeight;
+            var ewidth = img.clientWidth;
+            
+            if (eheight == 500 && ewidth == 550) {
+                alert("Maximum limit");
+                return false;
+            }
+            else {
+                img.style.height = (eheight + 50) + "px";
+                img.style.width = (ewidth + 50) + "px";
+            }
+
+        }
+        function doOut() {
+            var img = document.getElementById("id1");
+            var eheight = img.clientHeight;
+            var ewidth = img.clientWidth;
+
+            if (eheight == 100 && ewidth == 150) {
+                alert("Maximum limit");
+                return false;
+
+            }
+            else {
+                img.style.height = (eheight - 50) + "px";
+                img.style.width = (ewidth - 50) + "px";
+            }
+
+        }
+
+    </script>
+</head>
+
+<body align="center" style="font-size: 20px;">
+    <img src="angular.png" id="id1" style="height: 250px; width: 300px;"><br><br>
+    <input type="button" value="Zoom In" onclick="doIn()"> &nbsp;
+    <input type="button" value="Zoom Out" onclick="doOut()">
+</body>
+<script>
+
+</script>
+
+</html>
